@@ -32,13 +32,17 @@ const faculties: Faculty[] = [
   },
 ];
 
+type Genre = "Action" | "Sci-Fi" | "Adventure" | "Drama" | "Fantasy";
+
+type Type = "movie";
+
 interface Movie {
   id: number;
   title: string;
   year: number;
   released: string;
   runtime: string;
-  genre: string[];
+  genre: Genre[];
   director: string;
   writer: string;
   actors: string[];
@@ -47,7 +51,7 @@ interface Movie {
   poster: string;
   imdbRating: number;
   imdbVotes: number;
-  type: string;
+  type: Type;
   boxOffice: string;
   production: string;
 }
