@@ -1,17 +1,7 @@
-// C массивом фильмов (Homework_36.md) сделать следующий задачи, используя map/reduce вместо for, forEach:
-// 1. Собрать в массив все жанры фильмов (без повторения)
-// 2. Собрать в массив всех актеров всех фильмов (без повторения)
-// 3. Отсортировать фильмы по рейтингу по убыванию
-// 4. Создать новый массив, где объекты фильмов будут состоять из следующих полей: id, title, released, plot
-// 5. Создать функцию, которая бы принимала массив фильмов и число. А результатом этой функции должен быть отфильтрованный массив, с фильмами где число равно году выхода фильма.
-// 6. Создать функцию, которая бы принимала массив фильмов и строку. А результатом этой функции должен быть новый отфильтрованный массив, с фильмами, где строка входит в название фильма.
-// 7. Создать функцию, которая бы принимала массив фильмов и строку. А результатом этой функции должен быть отфильтрованный массив, с фильмами где строка входит в название фильма или в его сюжет.
-// 8. Создать функцию, которая бы принимала 3 параметра: 1)массив фильмов , 2) строка(название поля, например 'title') и строку/число(значение поля "Black Widow"). А результатом этой функции должен быть отфильтрованный массив, где параметры 2 и 3 равны в объекте фильма. Например: передаем
-
 type Genre = "Action" | "Sci-Fi" | "Adventure" | "Drama" | "Fantasy" | "Family";
 
 interface Movie {
-  id: number;
+  id?: number;
   title: string;
   year: number;
   released: string;
@@ -25,12 +15,12 @@ interface Movie {
   poster: string;
   imdbRating: number;
   imdbVotes: number;
-  type: string;
+  type?: string;
   boxOffice: string;
   production: string;
 }
 
-const movies: Partial<Movie>[] = [
+const movies: Movie[] = [
   {
     id: 1,
     title: "Black Widow",
@@ -130,26 +120,28 @@ const movies: Partial<Movie>[] = [
   },
 ];
 
-//1
-function genresString(arr: Partial<Movie>[]) {
+//1. Собрать в массив все жанры фильмов (без повторения)
+function genresString(arr: Movie[]) {
   const newGenres = [...new Set(arr.flatMap((item) => item.genre))];
   console.log(`All genres: ${newGenres.join(", ")}`);
 }
 genresString(movies);
 
-//2
-function allActors(arr: Partial<Movie>[]) {
+// 2. Собрать в массив всех актеров всех фильмов (без повторения)
+function allActors(arr: Movie[]) {
   const arrOfActors = [...new Set(arr.flatMap((item) => item.actors))];
   console.log(`All actors: ${arrOfActors.join(", ")}`);
 }
 allActors(movies);
 
-// //3
-// function sortByRate(arr: Partial<Movie>[]) {
-//   const newArr = arr.sort((a, b) => b.imdbRating? - a.imdbRating?); //вот тут выдает ошибку "возможно, объект равен "undefined" и я не знаю, что с ней делать
-//   console.log(newArr);
-// }
-// sortByRate(movies)
+// 3. Отсортировать фильмы по рейтингу по убыванию
+function sortByRate(arr: Movie[]) {
+  const newArr = arr.sort((a, b) => {
+    return b.imdbRating - a.imdbRating; //вот тут выдает ошибку "возможно, объект равен "undefined" и я не знаю, что с ней делать
+  });
+  console.log(newArr);
+}
+sortByRate(movies);
 
 // 4. Создать новый массив, где объекты фильмов будут состоять из следующих полей: id, title, released, plot
 
@@ -169,27 +161,27 @@ function newMovies(arr: Partial<Movie>[]) {
 newMovies(movies);
 
 // 5. Создать функцию, которая бы принимала массив фильмов и число. А результатом этой функции должен быть отфильтрованный массив, с фильмами где число равно году выхода фильма.
-function filterByNum(arr: Partial<Movie>[], num: number) {
+function filterByNum(arr: Movie[], num: number) {
   const newArr = arr.filter((item) => item.year === num);
   console.log(newArr);
 }
 filterByNum(movies, 2001);
 
 // 6. Создать функцию, которая бы принимала массив фильмов и строку. А результатом этой функции должен быть новый отфильтрованный массив, с фильмами, где строка входит в название фильма.
-function filterByString(arr: Partial<Movie>[], str: string) {
+function filterByString(arr: Movie[], str: string) {
   const newArr = arr.filter((item) =>
-    item.title?.toLowerCase().includes(str.toLowerCase())
+    item.title.toLowerCase().includes(str.toLowerCase())
   );
   console.log(newArr);
 }
 filterByString(movies, "Harry");
 
 // 7. Создать функцию, которая бы принимала массив фильмов и строку. А результатом этой функции должен быть отфильтрованный массив, с фильмами где строка входит в название фильма или в его сюжет.
-function filterByString1(arr: Partial<Movie>[], str: string) {
+function filterByString1(arr: Movie[], str: string) {
   const newArr = arr.filter(
     (item) =>
-      item.title?.toLowerCase().includes(str.toLowerCase()) ||
-      item.plot?.toLowerCase().includes(str.toLowerCase())
+      item.title.toLowerCase().includes(str.toLowerCase()) ||
+      item.plot.toLowerCase().includes(str.toLowerCase())
   );
   console.log(newArr);
 }
@@ -197,10 +189,16 @@ filterByString1(movies, "Harry");
 
 // 8. Создать функцию, которая бы принимала 3 параметра: 1)массив фильмов , 2) строка(название поля, например 'title') и строку/число(значение поля "Black Widow"). А результатом этой функции должен быть отфильтрованный массив, где параметры 2 и 3 равны в объекте фильма. Например: передаем
 
-// function findByString(arr: Partial<Movie>[], nameOfField: string, str: string) {
-//   const newArr = arr.filter((item) => {
-
-//   });
-//   console.log(newArr);
-// }
-// findByString(movies, "title", "Black Widow");
+function findByString( ///в этом задании я не поняла, как сделать, чтобы выполнялось условие про параметры 2 и 3 равны в объекте фильма
+  arr: Partial<Movie>[],
+  nameOfField: string,
+  value: string | number
+) {
+  const newArr = arr.filter((item) => {
+    return (
+      item.hasOwnProperty(nameOfField) && Object.values(item).includes(value)
+    );
+  });
+  console.log(newArr);
+}
+findByString(movies, "id", 3);
