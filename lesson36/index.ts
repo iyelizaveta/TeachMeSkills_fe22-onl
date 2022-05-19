@@ -189,15 +189,13 @@ filterByString1(movies, "Harry");
 
 // 8. Создать функцию, которая бы принимала 3 параметра: 1)массив фильмов , 2) строка(название поля, например 'title') и строку/число(значение поля "Black Widow"). А результатом этой функции должен быть отфильтрованный массив, где параметры 2 и 3 равны в объекте фильма. Например: передаем
 
-function findByString( ///в этом задании я не поняла, как сделать, чтобы выполнялось условие про параметры 2 и 3 равны в объекте фильма
+function findByString(
   arr: Partial<Movie>[],
-  nameOfField: string,
+  nameOfField: keyof Movie & string,
   value: string | number
 ) {
   const newArr = arr.filter((item) => {
-    return (
-      item.hasOwnProperty(nameOfField) && Object.values(item).includes(value)
-    );
+    return item.hasOwnProperty(nameOfField) && item[nameOfField] === value;
   });
   console.log(newArr);
 }
