@@ -82,9 +82,9 @@ filterByAnimals(users);
 //5
 function stringOfCars(arr: Partial<User>[]) {
   const newArr = arr
-    .map((user) => user.cars)
+    .flatMap((user) => user.cars)
     .filter((car) => car)
     .join(", ");
-  console.log(newArr);
+  console.log(`User cars: ${newArr}`);
 }
 stringOfCars(users);
