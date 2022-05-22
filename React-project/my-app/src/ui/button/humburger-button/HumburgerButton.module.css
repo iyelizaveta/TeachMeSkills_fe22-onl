@@ -1,9 +1,12 @@
+.hamburger {
+  background-color: white;
+  display: flex;
+}
+
 .button {
   color: var(--primary-text-color);
   background-color: white;
-  font-weight: bold;
-  font-size: 1.5rem;
   border: none;
-  width: 170px;
+  font-size: 1.5rem;
   cursor: pointer;
 }

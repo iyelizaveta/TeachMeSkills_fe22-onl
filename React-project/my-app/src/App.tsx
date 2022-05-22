@@ -1,16 +1,13 @@
 import React from "react";
 import "./App.css";
-// import { ContentMainPage } from "./pages/conent-main-page/ContentMainPage";
-// import { Form } from "./form/Form";
-// import { ContentTemplate } from './templates/content/ContentTemplate';
-// import { WelcomeTemplate } from './templates/welcome/WelcomeTemplate';
+import { MainPage } from "./pages/main-page/MainPage";
+// import { Menu } from "./ui/menu/Menu";
 
 function App() {
   return (
     <div className="App">
-      {/* <Form></Form> */}
-      {/* <WelcomeTemplate></WelcomeTemplate> */}
-      {/* <ContentMainPage></ContentMainPage> */}
+      <MainPage></MainPage>
+      {/* <Menu></Menu> */}
     </div>
   );
 }
