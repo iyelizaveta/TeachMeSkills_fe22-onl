@@ -1,0 +1,11 @@
+.textarea {
+    background: #f4efef;
+    box-sizing: border-box;
+    width: 350px;
+    height: 150px;
+    border: 3px solid #2323fa;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 15px;
+    resize: vertical;
+}
