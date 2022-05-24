@@ -1,23 +1,17 @@
 import styles from "./Menu.module.css";
 import { LogoutOutlined } from "@ant-design/icons";
-import { HumburgerButton } from "../button/humburger-button/HumburgerButton";
-import { UserButton } from "../button/UserButton/UserButton";
+// import { HumburgerButton } from "../button/humburger-button/HumburgerButton";
+// import { UserButton } from "../button/UserButton/UserButton";
 
 type MenuProps = {
   //   children: React.ReactNode;
-  className?: string;
+  // className?: string;
 };
 
-export const Menu: React.FC<MenuProps> = ({
-  //   children,
-  className,
-}) => {
+export const Menu: React.FC<MenuProps> = () => {
   return (
     <div className={styles.menu}>
-      <div className={styles.navigation}>
-        <HumburgerButton></HumburgerButton>
-        <UserButton>Username</UserButton>
-      </div>
+      <button>Close</button>
       <ul>
         <li>
           <a href="All posts"> All posts</a>

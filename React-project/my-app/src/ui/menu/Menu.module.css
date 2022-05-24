@@ -27,7 +27,7 @@ li ul {
   list-style-type: disc;
 }
 
-.navigation {
+/* .navigation {
   padding: 20px 0 0 20px;
   box-sizing: border-box;
   position: fixed;
@@ -37,4 +37,4 @@ li ul {
   display: flex;
   align-items: baseline;
   background-color: white;
-}
+} */
