@@ -17,10 +17,12 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         <span>Login</span> | Registration
       </h2>
       <Email
+        label={<span>Email</span>}
         value={emailValue}
         onChange={(event) => setEmailValue(event.target.value)}
       ></Email>
       <Password
+        label={<span>Password</span>}
         value={passwordValue}
         onChange={(event) => setPasswordValue(event.target.value)}
       ></Password>
