@@ -1,16 +1,23 @@
 import React from "react";
 import "./App.css";
-// import { ContentMainPage } from "./pages/conent-main-page/ContentMainPage";
-// import { Form } from "./form/Form";
-// import { ContentTemplate } from './templates/content/ContentTemplate';
-// import { WelcomeTemplate } from './templates/welcome/WelcomeTemplate';
+import { RegistrationConfirmation } from "./pages/registration-confirm/RegistrationConfirmation";
+// import { LoginPage } from "./pages/login/LoginPage";
+// import { PostCard } from "./ui/post-card/PostCard";
+// import { PostList } from "./ui/post-list/PostList";
 
 function App() {
   return (
     <div className="App">
-      {/* <Form></Form> */}
-      {/* <WelcomeTemplate></WelcomeTemplate> */}
-      {/* <ContentMainPage></ContentMainPage> */}
+      {/* <PostCard
+        id={0}
+        title="What is Lorem ipsum?"
+        text="Lorem ipsum"
+        date="15.05.2022"
+        image={undefined}
+      ></PostCard> */}
+      {/* <PostList></PostList> */}
+      {/* <LoginPage></LoginPage> */}
+      <RegistrationConfirmation></RegistrationConfirmation>
     </div>
   );
 }

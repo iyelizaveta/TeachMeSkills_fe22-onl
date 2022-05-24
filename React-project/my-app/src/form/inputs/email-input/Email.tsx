@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from '../input.module.css';
+import React from "react";
+import styles from "../input.module.css";
 
 type InputProps = {
   value: string;
@@ -15,7 +15,6 @@ export const Email: React.FC<InputProps> = ({ value, onChange }) => {
         type="email"
         value={value}
         onChange={onChange}
-        placeholder="Enter your email"
       ></input>
     </label>
   );
