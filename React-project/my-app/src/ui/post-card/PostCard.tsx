@@ -5,7 +5,6 @@ type PostCardProps = {
   text: string;
   date: string;
   title: string;
-  // author: number;
 };
 
 export const PostCard: React.FC<PostCardProps> = ({
@@ -14,10 +13,9 @@ export const PostCard: React.FC<PostCardProps> = ({
   text,
   date,
   title,
-  // author,
 }) => {
   return (
-    <div className={styles.cardContainer} id={`${id}`}>
+    <div className={styles.cardContainer} id={`post.${id}`}>
       <img className={styles.img} src={image} alt=""></img>
       <div className={styles.description}>
         <h3 className={styles.title}>{title}</h3>
