@@ -1,17 +1,16 @@
-import { Menu } from "antd";
+import { useState } from "react";
 import { HumburgerButton } from "../../ui/button/humburger-button/HumburgerButton";
-import { UserButton } from "../../ui/button/UserButton/UserButton";
 import styles from "./Header.module.css";
 
-type HeaderProps = {};
-export const Header: React.FC<HeaderProps> = () => {
+type HeaderProps = {
+  children?: React.ReactNode;
+};
+export const Header: React.FC<HeaderProps> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <header>
-      <div className={styles.header}>
-        <HumburgerButton></HumburgerButton>
-        <UserButton>Username</UserButton>
-      </div>
-      <Menu></Menu>
+    <header className={isOpen ? styles.openHeader : styles.header}>
+      <HumburgerButton onClick={() => setIsOpen(!isOpen)}></HumburgerButton>
+      {children}
     </header>
   );
 };

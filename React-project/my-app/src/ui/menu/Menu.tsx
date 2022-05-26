@@ -4,14 +4,14 @@ import { LogoutOutlined } from "@ant-design/icons";
 // import { UserButton } from "../button/UserButton/UserButton";
 
 type MenuProps = {
-  //   children: React.ReactNode;
+  children: React.ReactNode;
   // className?: string;
 };
 
-export const Menu: React.FC<MenuProps> = () => {
+export const Menu: React.FC<MenuProps> = ({ children }) => {
   return (
     <div className={styles.menu}>
-      <button>Close</button>
+      {children}
       <ul>
         <li>
           <a href="All posts"> All posts</a>

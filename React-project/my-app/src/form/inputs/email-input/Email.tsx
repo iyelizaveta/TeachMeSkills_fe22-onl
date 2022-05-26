@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from '../input.module.css';
+import React from "react";
+import styles from "../input.module.css";
 
 type InputProps = {
   value: string;
@@ -20,3 +20,19 @@ export const Email: React.FC<InputProps> = ({ value, onChange }) => {
     </label>
   );
 };
+// export const Email = React.forwardRef<HTMLInputElement, InputProps>(
+//   ({ label, value, onChange }, ref) => {
+//     return (
+//       <label className={styles.label}>
+//         {label}
+//         <input
+//           ref={ref}
+//           className={styles.input}
+//           type="email"
+//           value={value}
+//           onChange={onChange}
+//         ></input>
+//       </label>
+//     );
+//   }
+// );
