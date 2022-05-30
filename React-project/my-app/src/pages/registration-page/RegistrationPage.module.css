@@ -18,3 +18,7 @@ h2 {
   color: var(--primary-text-color);
   font-weight: 700;
 }
+
+span {
+  color: var(--secondary-text-color);
+}

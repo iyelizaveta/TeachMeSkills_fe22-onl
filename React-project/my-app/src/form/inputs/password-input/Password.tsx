@@ -1,4 +1,4 @@
-// import React, { useState } from "react";
+import React from "react";
 import styles from "../input.module.css";
 
 type PasswordProps = {
@@ -7,29 +7,19 @@ type PasswordProps = {
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 };
 
-export const Password: React.FC<PasswordProps> = ({
-  label,
-  value,
-  onChange,
-}) => {
-  // const [isPasswordShown, setIsPasswordShown] = useState(false);
-  return (
-    <label className={styles.label}>
-      {label}
-      <input
-        className={styles.input}
-        type="password"
-        value={value}
-        onChange={onChange}
-      ></input>
-      {/* <button
-        type="button"
-        onClick={() => {
-          setIsPasswordShown(!isPasswordShown);
-        }}
-      >
-        {isPasswordShown ? 'Hide Password' : 'Show Password'}
-      </button> */}
-    </label>
-  );
-};
+export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
+  ({ label, value, onChange }, ref) => {
+    return (
+      <label className={styles.label}>
+        {label}
+        <input
+          ref={ref}
+          className={styles.input}
+          type="password"
+          value={value}
+          onChange={onChange}
+        ></input>
+      </label>
+    );
+  }
+);

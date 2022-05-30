@@ -7,9 +7,7 @@ import { WelcomeTemplate } from "../../templates/welcome/WelcomeTemplate";
 import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import styles from "./RegistrationPage.module.css";
 
-type RegistrationPageProps = {
-  //   children: ReactNode;
-};
+type RegistrationPageProps = {};
 
 export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
   const [textInputValue, setTextInputValue] = useState("");
@@ -20,7 +18,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
       <WelcomeTemplate
         title={
           <Title>
-            Login | <span>Registration</span>
+            <span>Login</span> | Registration
           </Title>
         }
         actionButton={
