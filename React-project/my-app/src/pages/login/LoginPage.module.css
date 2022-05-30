@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  width: 250px;
+  height: 40px;
+  margin-top: 25px;
+  display: block;
+}
+
+h2 {
+  color: var(--secondary-text-color);
+}
+
+span {
+  color: var(--secondary-text-color);
+}
+
+.log {
+  color: var(--primary-text-color);
+  font-weight: 700;
+}

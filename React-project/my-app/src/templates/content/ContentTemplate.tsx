@@ -1,7 +1,6 @@
-// import { PrimaryButton } from '../../ui/button/PrimaryButton/PrimaryButton';
-import { Title } from '../../ui/title/Title';
-// import styles from './ContentTemplate.module.css';
-import { UserButton } from '../../ui/button/UserButton/UserButton';
+import { Title } from "../../ui/title/Title";
+import styles from "./ContentTemplate.module.css";
+import { Header } from "../../features/header/Header";
 
 type ContentTemplateProps = {
   title: React.ReactNode;
@@ -13,8 +12,8 @@ export const ContentTemplate: React.FC<ContentTemplateProps> = ({
   children,
 }) => {
   return (
-    <div>
-      <UserButton>Username</UserButton>
+    <div className={styles.container}>
+      <Header>{/* <UserButton>Username</UserButton> */}</Header>
       <Title>{title}</Title>
       <div>{children}</div>
     </div>

@@ -1,15 +1,26 @@
-import { PrimaryButton } from '../../ui/button/PrimaryButton/PrimaryButton';
-import { Title } from '../../ui/title/Title';
-import styles from './WelcomeTemplate.module.css';
+import { Header } from "../../features/header/Header";
+import styles from "./WelcomeTemplate.module.css";
 
-type WelcomeTemplateProps = {};
+type WelcomeTemplateProps = {
+  title: React.ReactNode;
+  children: React.ReactNode;
+  actionButton: React.ReactNode;
+  description?: React.ReactNode;
+};
 
-export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = () => {
+export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({
+  title,
+  children,
+  actionButton,
+  description,
+}) => {
   return (
-    <div>
-      <Title>Template title</Title>
-      <p>Template body</p>
-      <PrimaryButton className={styles.button}>Button</PrimaryButton>
+    <div className={styles.container}>
+      <Header></Header>
+      {title}
+      {children}
+      {actionButton}
+      {description}
     </div>
   );
 };
