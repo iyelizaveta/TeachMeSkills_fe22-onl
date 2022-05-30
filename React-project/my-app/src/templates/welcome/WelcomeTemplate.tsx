@@ -1,3 +1,4 @@
+import { Header } from "../../features/header/Header";
 import styles from "./WelcomeTemplate.module.css";
 
 type WelcomeTemplateProps = {
@@ -15,6 +16,7 @@ export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({
 }) => {
   return (
     <div className={styles.container}>
+      <Header></Header>
       {title}
       {children}
       {actionButton}

@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/alt-text */
-import styles from './UserButton.module.css';
-import './icon.png';
+import styles from "./UserButton.module.css";
+import { UserOutlined } from "@ant-design/icons";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -9,6 +8,7 @@ type ButtonProps = {
 export const UserButton: React.FC<ButtonProps> = ({ children }) => {
   return (
     <button type="button" className={styles.button}>
+      <UserOutlined></UserOutlined>
       {children}
     </button>
   );

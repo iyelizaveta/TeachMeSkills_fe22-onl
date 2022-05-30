@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+h2 {
+  padding-left: 5%;
+  text-align: left;
+  width: 150px;
+}
+span {
+  color: var(--primary-text-color);
+}
+p {
+  padding-left: 5%;
+  width: 270px;
+  text-align: justify;
+  margin-bottom: 50px;
+}
+
+.button {
+  margin-left: 5%;
+  width: 150px;
+  height: 40px;
+}
