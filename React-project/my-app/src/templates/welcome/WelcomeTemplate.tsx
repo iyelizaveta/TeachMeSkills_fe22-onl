@@ -17,10 +17,12 @@ export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({
   return (
     <div className={styles.container}>
       <Header></Header>
-      {title}
-      {children}
-      {actionButton}
-      {description}
+      <div className={styles.body}>
+        {title}
+        {children}
+        {actionButton}
+        {description}
+      </div>
     </div>
   );
 };

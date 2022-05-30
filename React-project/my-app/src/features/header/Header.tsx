@@ -9,8 +9,9 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className={isOpen ? styles.openHeader : styles.header}>
-      <HumburgerButton onClick={() => setIsOpen(!isOpen)}></HumburgerButton>
-      {children}
+      <HumburgerButton onClick={() => setIsOpen(!isOpen)}>
+        {children}
+      </HumburgerButton>
     </header>
   );
 };

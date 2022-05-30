@@ -1,6 +1,6 @@
 import styles from "./PostCard.module.css";
 type PostCardProps = {
-  id: number;
+  id: number | string;
   image: string | undefined;
   text: string;
   date: string;
