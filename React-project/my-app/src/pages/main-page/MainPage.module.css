@@ -1,26 +1,26 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
+  align-items: flex-start;
+  padding-left: 5%;
 }
 
-h2 {
-  padding-left: 5%;
+.h2 {
   text-align: left;
-  width: 150px;
+  color: black;
+  padding: 0;
 }
-span {
+.span {
   color: var(--primary-text-color);
 }
-p {
-  padding-left: 5%;
+.p {
   width: 270px;
   text-align: justify;
   margin-bottom: 50px;
+  color: var(--secondary-text-color);
 }
 
 .button {
-  margin-left: 5%;
   width: 150px;
   height: 40px;
 }

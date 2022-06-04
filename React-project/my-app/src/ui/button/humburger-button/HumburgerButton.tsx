@@ -11,6 +11,7 @@ type HumburgerButtonProps = {
 
 export const HumburgerButton: React.FC<HumburgerButtonProps> = ({
   onClick,
+  children,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   return isOpen ? (
@@ -36,6 +37,7 @@ export const HumburgerButton: React.FC<HumburgerButtonProps> = ({
       }}
     >
       <MenuOutlined className={styles.button} />
+      {children}
     </button>
   );
 };

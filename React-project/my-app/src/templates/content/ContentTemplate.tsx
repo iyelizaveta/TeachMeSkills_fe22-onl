@@ -1,6 +1,6 @@
-import { Title } from "../../ui/title/Title";
 import styles from "./ContentTemplate.module.css";
 import { Header } from "../../features/header/Header";
+import { UserButton } from "../../ui/button/UserButton/UserButton";
 
 type ContentTemplateProps = {
   title: React.ReactNode;
@@ -13,9 +13,13 @@ export const ContentTemplate: React.FC<ContentTemplateProps> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <Header>{/* <UserButton>Username</UserButton> */}</Header>
-      <Title>{title}</Title>
-      <div>{children}</div>
+      <Header>
+        <UserButton>Username</UserButton>
+      </Header>
+      <div className={styles.body}>
+        {title}
+        {children}
+      </div>
     </div>
   );
 };

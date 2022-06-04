@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Email } from "../../form/inputs/email-input/Email";
 import { Password } from "../../form/inputs/password-input/Password";
 import { WelcomeTemplate } from "../../templates/welcome/WelcomeTemplate";
+import { AppPages } from "../../types";
 import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import { Title } from "../../ui/title/Title";
 import styles from "./LoginPage.module.css";
@@ -21,11 +23,18 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
       <WelcomeTemplate
         title={
           <Title>
-            Login | <span> Registration </span>
+            Login |{" "}
+            <Link to={AppPages.REGISTRATION}>
+              <span className={styles.label}> Registration </span>
+            </Link>
           </Title>
         }
         actionButton={
-          <PrimaryButton className={styles.button}>Login</PrimaryButton>
+          <Link to={AppPages.MAIN_PAGE}>
+            <PrimaryButton className={styles.button} role="presentation">
+              Login
+            </PrimaryButton>
+          </Link>
         }
         description={
           <p>

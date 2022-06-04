@@ -12,33 +12,7 @@ type PostListProps = {
   }>;
 };
 
-export const PostList: React.FC<PostListProps> = () => {
-  const data = [
-    {
-      id: 1,
-      image:
-        "https://cdn.britannica.com/89/131089-050-A4773446/flowers-garden-petunia.jpg?w=690&h=388&c=crop",
-      text: "Lorem ipsum",
-      date: "15.05.2022",
-      title: "Why is lorem ipsum?",
-    },
-    {
-      id: 2,
-      image:
-        "https://cdn.britannica.com/89/131089-050-A4773446/flowers-garden-petunia.jpg?w=690&h=388&c=crop",
-      text: "Lorem ipsum",
-      date: "15.05.2022",
-      title: "Why is lorem ipsum?",
-    },
-    {
-      id: 3,
-      image:
-        "https://cdn.britannica.com/89/131089-050-A4773446/flowers-garden-petunia.jpg?w=690&h=388&c=crop",
-      text: "Lorem ipsum",
-      date: "15.05.2022",
-      title: "Why is lorem ipsum?",
-    },
-  ];
+export const PostList: React.FC<PostListProps> = ({ data }) => {
   return (
     <div className={styles.container}>
       {data.map((post) => (
