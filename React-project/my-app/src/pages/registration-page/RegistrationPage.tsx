@@ -1,8 +1,8 @@
 import { Title } from "../../ui/title/Title";
 import { useState } from "react";
-import { Email } from "../../form/inputs/email-input/Email";
-import { Password } from "../../form/inputs/password-input/Password";
-import { TextInput } from "../../form/inputs/text-input/TextInput";
+import { Email } from "../../ui/form/inputs/email-input/Email";
+import { Password } from "../../ui/form/inputs/password-input/Password";
+import { TextInput } from "../../ui/form/inputs/text-input/TextInput";
 import { WelcomeTemplate } from "../../templates/welcome/WelcomeTemplate";
 import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import styles from "./RegistrationPage.module.css";

@@ -7,4 +7,5 @@ export enum AppPages {
   RESET_PASSWORD = "/reset-password",
   SELECTED_POST = "/posts/:id",
   SUCCESS_PAGE = "/success-page",
+  INFO_PAGE = "/information-page",
 }

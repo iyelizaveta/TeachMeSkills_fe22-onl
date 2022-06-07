@@ -1,0 +1,15 @@
+.container {
+  background-color: var(--light-blue-background-color);
+  width: 600px;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 2%;
+  text-align: justify;
+  color: var(--secondary-text-color);
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 320px;
+  }
+}

@@ -1,0 +1,16 @@
+.container {
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  margin-right: 25px;
+  background-color: var(--blue-background-color);
+}
