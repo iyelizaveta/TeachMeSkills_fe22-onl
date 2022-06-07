@@ -1,1 +1,8 @@
+.container {
+  height: 100vh;
+  background-color: var(--background-color);
+}
 
+.button {
+  background-color: var(--blue-background-color);
+}

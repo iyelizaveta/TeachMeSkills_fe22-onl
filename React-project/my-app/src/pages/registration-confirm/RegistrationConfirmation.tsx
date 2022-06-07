@@ -9,18 +9,17 @@ export const RegistrationConfirmation: React.FC<
   RegistrationConfirmationProps
 > = () => {
   return (
-    <div className={styles.container}>
-      <WelcomeTemplate
-        title={<Title>Registration Confirmation</Title>}
-        actionButton={
-          <PrimaryButton className={styles.button}>Home</PrimaryButton>
-        }
-      >
-        <p className={styles.text}>
-          Please activate your account with the activator link in the email{" "}
-          <span>test@gmail.com</span>. Please, check your email
-        </p>
-      </WelcomeTemplate>
-    </div>
+    <WelcomeTemplate
+      className={styles.container}
+      title={<Title>Registration Confirmation</Title>}
+      actionButton={
+        <PrimaryButton className={styles.button}>Home</PrimaryButton>
+      }
+    >
+      <p className={styles.text}>
+        Please activate your account with the activator link in the email{" "}
+        <span>test@gmail.com</span>. Please, check your email
+      </p>
+    </WelcomeTemplate>
   );
 };

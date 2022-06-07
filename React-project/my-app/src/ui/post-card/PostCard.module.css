@@ -1,8 +1,8 @@
 .cardContainer {
+  background-color: var(--light-blue-background-color);
   box-sizing: border-box;
   width: 300px;
   height: 270px;
-  border: 1px solid rgb(156, 229, 247);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -41,5 +41,5 @@
 .date {
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgb(39, 163, 229);
+  color: var(--primary-text-color);
 }

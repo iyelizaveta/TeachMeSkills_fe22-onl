@@ -1,14 +1,17 @@
 import { ContentTemplate } from "../../templates/content/ContentTemplate";
 import { PostCard } from "../../ui/post-card/PostCard";
 import { Title } from "../../ui/title/Title";
-// import styles from "./SelectedPost.module.css";
+import styles from "./SelectedPost.module.css";
 
 type SelectedPostProps = {};
 
 export const SelectedPost: React.FC<SelectedPostProps> = () => {
   return (
     <div>
-      <ContentTemplate title={<Title>Selected post</Title>}>
+      <ContentTemplate
+        className={styles.container}
+        title={<Title>Selected post</Title>}
+      >
         <PostCard
           id={1}
           key={1}

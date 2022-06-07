@@ -16,7 +16,7 @@ export const MainPage: React.FC<MainPageProps> = () => {
           </h2>
         }
         actionButton={
-          <Link to={AppPages.POSTS}>
+          <Link to={AppPages.REGISTRATION}>
             <PrimaryButton className={styles.button}>Learn More</PrimaryButton>
           </Link>
         }

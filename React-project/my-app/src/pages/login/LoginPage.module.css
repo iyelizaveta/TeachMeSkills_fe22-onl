@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  background-color: var(--background-color);
 }
 
 .button {
@@ -9,6 +11,7 @@
   height: 40px;
   margin-top: 25px;
   display: block;
+  background-color: var(--blue-background-color);
 }
 
 h2 {

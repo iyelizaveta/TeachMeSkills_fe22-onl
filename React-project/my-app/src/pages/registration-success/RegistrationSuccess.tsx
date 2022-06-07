@@ -10,6 +10,7 @@ type RegistrationSuccessProps = {};
 export const RegistrationSuccess: React.FC<RegistrationSuccessProps> = () => {
   return (
     <WelcomeTemplate
+      className={styles.container}
       title={<Title>Success</Title>}
       actionButton={
         <Link to={AppPages.LOGIN}>

@@ -30,7 +30,7 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
           </Title>
         }
         actionButton={
-          <Link to={AppPages.MAIN_PAGE}>
+          <Link to={AppPages.POSTS}>
             <PrimaryButton className={styles.button} role="presentation">
               Login
             </PrimaryButton>
