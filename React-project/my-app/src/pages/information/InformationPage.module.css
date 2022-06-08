@@ -1,16 +1,10 @@
 .container {
-  height: 100vh;
-  background-color: var(--background-color);
+  background: var(--background-color);
+  min-height: 100vh;
 }
 
 .btnContainer {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-}
-
-.button {
-  width: 100px;
-  height: 40px;
-  margin-right: 25px;
-  background-color: var(--blue-background-color);
 }

@@ -1,0 +1,25 @@
+.container {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.like {
+  color: var(--blue-background-color);
+}
+
+.pressedLike {
+  color: var(--blue-background-color);
+}
+
+.dislike {
+  color: var(--blue-background-color);
+}
+
+.pressedDislike {
+  color: var(--blue-background-color);
+}
+
+.likesCont {
+  display: block;
+}

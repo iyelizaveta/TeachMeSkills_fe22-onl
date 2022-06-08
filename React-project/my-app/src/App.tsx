@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppPages } from "./types";
 import "./App.css";
+// import "antd/dist/antd.css";
 import { LoginPage } from "./pages/login/LoginPage";
 import { RegistrationPage } from "./pages/registration-page/RegistrationPage";
 import { MainPage } from "./pages/main-page/MainPage";
@@ -27,7 +28,10 @@ function App() {
           path={AppPages.REGISTRATION}
           element={<RegistrationPage />}
         ></Route>
-        <Route path={AppPages.SELECTED_POST} element={<SelectedPost />}></Route>
+        <Route
+          path={`${AppPages.POSTS}/:id`}
+          element={<SelectedPost />}
+        ></Route>
         <Route
           path={AppPages.SUCCESS_PAGE}
           element={<RegistrationSuccess />}

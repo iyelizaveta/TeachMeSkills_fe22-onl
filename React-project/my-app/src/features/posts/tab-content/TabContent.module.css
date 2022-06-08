@@ -1,0 +1,11 @@
+.tabContent {
+  width: 600px;
+  height: 300px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: var(--light-blue-background-color);
+  color: var(--text-color);
+  text-align: justify;
+}

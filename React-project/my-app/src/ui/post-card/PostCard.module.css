@@ -2,7 +2,7 @@
   background-color: var(--light-blue-background-color);
   box-sizing: border-box;
   width: 300px;
-  height: 270px;
+  height: 310px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -42,4 +42,12 @@
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--primary-text-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview {
+  color: var(--blue-background-color);
+  font-size: 1.5rem;
 }
