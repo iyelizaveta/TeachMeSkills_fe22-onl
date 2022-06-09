@@ -1,4 +1,3 @@
-import { LikeDislike } from "../../features/posts/like-dislike/ui/like-dislike/LikeDislike";
 import { PreviewButton } from "../preview-button/PreviewButton";
 import styles from "./PostCard.module.css";
 type PostCardProps = {
@@ -8,6 +7,7 @@ type PostCardProps = {
   date: string;
   title: string;
   onPreviewClick?: (id: string | number) => void;
+  LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
 
 export const PostCard: React.FC<PostCardProps> = ({
@@ -17,6 +17,7 @@ export const PostCard: React.FC<PostCardProps> = ({
   date,
   title,
   onPreviewClick,
+  LikeDislike,
 }) => {
   return (
     <div className={styles.cardContainer} id={`post.${id}`}>
@@ -33,12 +34,13 @@ export const PostCard: React.FC<PostCardProps> = ({
             }}
           ></PreviewButton>
         </p>
-        <LikeDislike
+        {LikeDislike ? <LikeDislike id={id} /> : null}
+        {/* <LikeDislike
           onLikeClick={() => null}
           onDilslikeClick={() => null}
-          currentState={"like"}
-          count={39}
-        ></LikeDislike>
+          currentState={null}
+          count={-28}
+        ></LikeDislike> */}
       </div>
     </div>
   );

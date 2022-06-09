@@ -13,9 +13,14 @@ type PostListProps = {
     title: string;
   }>;
   onPreviewClick?: (id: string | number) => void;
+  LikeDislike?: React.ComponentType<{ id: string | number }>;
 };
 
-export const PostList: React.FC<PostListProps> = ({ data, onPreviewClick }) => {
+export const PostList: React.FC<PostListProps> = ({
+  data,
+  onPreviewClick,
+  LikeDislike,
+}) => {
   return (
     <div className={styles.container}>
       {data.map((post) => (
@@ -28,6 +33,7 @@ export const PostList: React.FC<PostListProps> = ({ data, onPreviewClick }) => {
             date={post.date}
             title={post.title}
             onPreviewClick={onPreviewClick}
+            LikeDislike={LikeDislike}
           ></PostCard>
         </Link>
       ))}

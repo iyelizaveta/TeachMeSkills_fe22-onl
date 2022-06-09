@@ -19,19 +19,57 @@ export const LikeDislike: React.FC<LikeDislikeProps> = ({
   currentState,
   count,
 }) => {
-  const Like = <LikeOutlined className={styles.like} />;
-  const PressedLike = <LikeFilled className={styles.pressedLike} />;
+  const Like = (
+    <LikeOutlined
+      className={styles.like}
+      onClick={(event) => {
+        event.preventDefault();
+        onLikeClick();
+      }}
+      role="button"
+    />
+  );
+  const PressedLike = (
+    <LikeFilled
+      className={styles.pressedLike}
+      onClick={(event) => {
+        event.preventDefault();
+        onLikeClick();
+      }}
+      role="button"
+    />
+  );
 
-  const Dislike = <DislikeOutlined className={styles.dislike} />;
-  const PressedDislike = <DislikeFilled className={styles.pressedDislike} />;
+  const Dislike = (
+    <DislikeOutlined
+      className={styles.dislike}
+      onClick={(event) => {
+        event.preventDefault();
+        onDilslikeClick();
+      }}
+      role="button"
+    />
+  );
+  const PressedDislike = (
+    <DislikeFilled
+      className={styles.pressedDislike}
+      onClick={(event) => {
+        event.preventDefault();
+        onDilslikeClick();
+      }}
+      role="button"
+    />
+  );
 
   return (
     <div className={styles.container}>
       <div className={styles.likesCont}>
-        {currentState === "like" ? PressedLike : Like} {count}{" "}
+        {currentState === "like" ? PressedLike : Like}{" "}
+        {count > 0 ? count : null}{" "}
       </div>
       <div className={styles.likesCont}>
-        {currentState === "dislike" ? PressedDislike : Dislike} {count}{" "}
+        {currentState === "dislike" ? PressedDislike : Dislike}{" "}
+        {count < 0 ? Math.abs(count) : null}{" "}
       </div>
     </div>
   );

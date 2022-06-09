@@ -1,13 +1,13 @@
 import { ContentTemplate } from "../../templates/content/ContentTemplate";
 import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
-import { PostList } from "../../ui/post-list/PostList";
 import { Title } from "../../ui/title/Title";
 import styles from "./MyPosts.module.css";
 import { setSelectedPost } from "../../features/posts/selectedPostSlice";
-import data from "../../features/posts/card-list/data.json";
+import data from "./data.json";
 import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { PostCard } from "../../ui/post-card/PostCard";
+import { PostsCardList } from "../../features/posts/card-list/CardList";
 
 type MyPostsProps = {};
 
@@ -42,10 +42,9 @@ export const MyPosts: React.FC<MyPostsProps> = () => {
           </Title>
         }
       >
-        <PostList
-          data={posts ?? []}
+        <PostsCardList
           onPreviewClick={(id) => dispatch(setSelectedPost(id))}
-        ></PostList>
+        ></PostsCardList>
       </ContentTemplate>
     </div>
   );
