@@ -8,6 +8,8 @@ type PostCardProps = {
   title: string;
   onPreviewClick?: (id: string | number) => void;
   LikeDislike?: React.ComponentType<{ id: string | number }>;
+  className?: string;
+  children?: React.ReactNode;
 };
 
 export const PostCard: React.FC<PostCardProps> = ({
@@ -18,9 +20,12 @@ export const PostCard: React.FC<PostCardProps> = ({
   title,
   onPreviewClick,
   LikeDislike,
+  className,
+  children,
 }) => {
   return (
-    <div className={styles.cardContainer} id={`post.${id}`}>
+    <div className={`${styles.cardContainer} ${className}`} id={`post.${id}`}>
+      {children}
       <img className={styles.img} src={image} alt=""></img>
       <div className={styles.description}>
         <h3 className={styles.title}>{title}</h3>
@@ -35,12 +40,6 @@ export const PostCard: React.FC<PostCardProps> = ({
           ></PreviewButton>
         </p>
         {LikeDislike ? <LikeDislike id={id} /> : null}
-        {/* <LikeDislike
-          onLikeClick={() => null}
-          onDilslikeClick={() => null}
-          currentState={null}
-          count={-28}
-        ></LikeDislike> */}
       </div>
     </div>
   );

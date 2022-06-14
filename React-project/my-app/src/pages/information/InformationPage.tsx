@@ -38,12 +38,11 @@ export const InformationPage: React.FC<InformationPageProps> = () => {
     setSelectedTabId(id);
   };
   return (
-    <ContentTemplate
-      title={<Title>Information</Title>}
-      className={styles.container}
-    >
-      <Tabs tabs={tabs} selectedId={selectedTabId} onClick={handleTabClick} />
-      <TabContent content={content} selectedId={selectedTabId}></TabContent>
-    </ContentTemplate>
+    <div className={styles.container}>
+      <ContentTemplate title={<Title>Information</Title>}>
+        <Tabs tabs={tabs} selectedId={selectedTabId} onClick={handleTabClick} />
+        <TabContent content={content} selectedId={selectedTabId}></TabContent>
+      </ContentTemplate>
+    </div>
   );
 };

@@ -9,9 +9,7 @@ import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import { Title } from "../../ui/title/Title";
 import styles from "./LoginPage.module.css";
 
-type LoginPageProps = {
-  //   children: ReactNode;
-};
+type LoginPageProps = {};
 
 export const LoginPage: React.FC<LoginPageProps> = () => {
   const [emailValue, setEmailValue] = useState("");
