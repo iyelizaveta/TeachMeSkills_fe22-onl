@@ -1,5 +1,5 @@
 .hamburger {
-  background-color: white;
+  background-color: var(--background-color);
   display: flex;
   border: none;
   font-size: 1.5rem;
@@ -9,13 +9,13 @@
 
 .button {
   color: var(--primary-text-color);
-  background-color: white;
+  background-color: var(--background-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
 
 .buttonOpen {
-  color: white;
+  color: var(--text-color);
   background-color: var(--primary-text-color);
   font-size: 1.5rem;
   cursor: pointer;
