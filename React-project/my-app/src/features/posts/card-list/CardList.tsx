@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 // import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { PostList } from "../../../ui/post-list/PostList";
 import { PostsLikeDislike } from "../like-dislike/posts-like-dislike";
+import { PostsMarkDismark } from "../mark-dismark/posts-mark-dismark";
 import data from "./data.json";
 
 type PostsCardListProps = {
@@ -23,6 +24,7 @@ export const PostsCardList: React.FC<PostsCardListProps> = ({
       data={posts ?? []}
       onPreviewClick={onPreviewClick}
       LikeDislike={PostsLikeDislike}
+      MarkDismark={PostsMarkDismark}
     />
   );
 };

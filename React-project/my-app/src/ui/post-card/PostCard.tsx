@@ -1,3 +1,4 @@
+import { MarkDismark } from "../../features/posts/mark-dismark/ui/MarkDismark";
 import { PreviewButton } from "../preview-button/PreviewButton";
 import styles from "./PostCard.module.css";
 type PostCardProps = {
@@ -8,6 +9,7 @@ type PostCardProps = {
   title: string;
   onPreviewClick?: (id: string | number) => void;
   LikeDislike?: React.ComponentType<{ id: string | number }>;
+  MarkDismark?: React.ComponentType<{ id: string | number }>;
   className?: string;
   children?: React.ReactNode;
 };
@@ -20,6 +22,7 @@ export const PostCard: React.FC<PostCardProps> = ({
   title,
   onPreviewClick,
   LikeDislike,
+  MarkDismark,
   className,
   children,
 }) => {
@@ -39,7 +42,10 @@ export const PostCard: React.FC<PostCardProps> = ({
             }}
           ></PreviewButton>
         </p>
-        {LikeDislike ? <LikeDislike id={id} /> : null}
+        <div className={styles.featuresContainer}>
+          {LikeDislike ? <LikeDislike id={id} /> : null}
+          {MarkDismark ? <MarkDismark id={id} /> : null}
+        </div>
       </div>
     </div>
   );
