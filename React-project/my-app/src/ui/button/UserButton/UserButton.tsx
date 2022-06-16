@@ -7,9 +7,9 @@ type ButtonProps = {
 
 export const UserButton: React.FC<ButtonProps> = ({ children }) => {
   return (
-    <button type="button" className={styles.button}>
+    <div role="button" className={styles.button}>
       <UserOutlined></UserOutlined>
       {children}
-    </button>
+    </div>
   );
 };
