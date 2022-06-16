@@ -12,14 +12,12 @@ export const RegistrationConfirmation: React.FC<
     <WelcomeTemplate
       className={styles.container}
       title={<Title>Registration Confirmation</Title>}
-      actionButton={
-        <PrimaryButton className={styles.button}>Home</PrimaryButton>
-      }
     >
       <p className={styles.text}>
         Please activate your account with the activator link in the email{" "}
         <span>test@gmail.com</span>. Please, check your email
       </p>
+      <PrimaryButton className={styles.button}>Home</PrimaryButton>
     </WelcomeTemplate>
   );
 };

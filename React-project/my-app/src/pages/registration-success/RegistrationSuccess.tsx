@@ -12,15 +12,13 @@ export const RegistrationSuccess: React.FC<RegistrationSuccessProps> = () => {
     <WelcomeTemplate
       className={styles.container}
       title={<Title>Success</Title>}
-      actionButton={
-        <Link to={AppPages.LOGIN}>
-          <PrimaryButton className={styles.button}>Login</PrimaryButton>
-        </Link>
-      }
     >
       <p className={styles.text}>
         Email confirmed. Your registration is now completed
       </p>
+      <Link to={AppPages.LOGIN}>
+        <PrimaryButton className={styles.button}>Login</PrimaryButton>
+      </Link>
     </WelcomeTemplate>
   );
 };

@@ -28,3 +28,9 @@ span {
 .label {
   color: var(--secondary-text-color);
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

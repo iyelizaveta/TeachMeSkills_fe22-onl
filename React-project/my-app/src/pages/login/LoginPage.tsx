@@ -27,13 +27,6 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
           </Link>
         </Title>
       }
-      actionButton={
-        <Link to={AppPages.POSTS}>
-          <PrimaryButton className={styles.button} role="presentation">
-            Login
-          </PrimaryButton>
-        </Link>
-      }
       description={
         <p>
           Forgot your password?{" "}
@@ -41,28 +34,35 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         </p>
       }
     >
-      <Email
-        ref={emailRef}
-        label={<span className={styles.label}>Email</span>}
-        value={emailValue}
-        onChange={(event) => setEmailValue(event.target.value)}
-      ></Email>
-      <Password
-        ref={passwordRef}
-        label={<span className={styles.label}>Password</span>}
-        value={passwordValue}
-        onChange={(event) => setPasswordValue(event.target.value)}
-      ></Password>
-      <PrimaryButton
-        onClick={() => {
-          setEmailValue("");
-          setPasswordValue("");
-          emailRef.current?.focus();
-        }}
-        className={styles.button}
-      >
-        Reset
-      </PrimaryButton>
+      <form className={styles.form}>
+        <Email
+          ref={emailRef}
+          label={<span className={styles.label}>Email</span>}
+          value={emailValue}
+          onChange={(event) => setEmailValue(event.target.value)}
+        ></Email>
+        <Password
+          ref={passwordRef}
+          label={<span className={styles.label}>Password</span>}
+          value={passwordValue}
+          onChange={(event) => setPasswordValue(event.target.value)}
+        ></Password>
+        <PrimaryButton
+          onClick={() => {
+            setEmailValue("");
+            setPasswordValue("");
+            emailRef.current?.focus();
+          }}
+          className={styles.button}
+        >
+          Reset
+        </PrimaryButton>
+        <Link to={AppPages.POSTS}>
+          <PrimaryButton className={styles.button} role="presentation">
+            Login
+          </PrimaryButton>
+        </Link>
+      </form>
     </WelcomeTemplate>
   );
 };

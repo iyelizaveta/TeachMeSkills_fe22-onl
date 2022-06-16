@@ -15,16 +15,14 @@ export const MainPage: React.FC<MainPageProps> = () => {
           Make your Blog <span className={styles.span}>Online</span>
         </h2>
       }
-      actionButton={
-        <Link to={AppPages.REGISTRATION}>
-          <PrimaryButton className={styles.button}>Learn More</PrimaryButton>
-        </Link>
-      }
     >
       <p className={styles.p}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been...
       </p>
+      <Link to={AppPages.REGISTRATION}>
+        <PrimaryButton className={styles.button}>Learn More</PrimaryButton>
+      </Link>
     </WelcomeTemplate>
   );
 };

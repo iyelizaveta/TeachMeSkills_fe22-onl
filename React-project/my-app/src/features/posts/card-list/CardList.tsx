@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { PostList } from "../../../ui/post-list/PostList";
-import { PostsLikeDislike } from "../like-dislike";
+import { PostsLikeDislike } from "../like-dislike/posts-like-dislike";
 import data from "./data.json";
 
 type PostsCardListProps = {

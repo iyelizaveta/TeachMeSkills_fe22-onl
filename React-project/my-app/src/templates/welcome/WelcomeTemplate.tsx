@@ -5,14 +5,13 @@ type WelcomeTemplateProps = {
   title: React.ReactNode;
   children: React.ReactNode;
   className?: string;
-  actionButton: React.ReactNode;
+  // actionButton: React.ReactNode;
   description?: React.ReactNode;
 };
 
 export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({
   title,
   children,
-  actionButton,
   description,
   className = "",
 }) => {
@@ -22,7 +21,6 @@ export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({
       <div className={styles.body}>
         {title}
         {children}
-        {actionButton}
         {description}
       </div>
     </div>
