@@ -12,9 +12,9 @@ import { AppPages } from "../../types";
 type RegistrationPageProps = {};
 
 export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
-  const [textInputValue, setTextInputValue] = useState("");
-  const [emailValue, setEmailValue] = useState("");
-  const [passwordValue, setPasswordValue] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   return (
     <WelcomeTemplate
@@ -46,23 +46,23 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
     >
       <TextInput
         label={<span className={styles.label}>User name</span>}
-        value={textInputValue}
-        onChange={(event) => setTextInputValue(event.target.value)}
+        value={name}
+        onChange={(event) => setName(event.target.value)}
       ></TextInput>
       <Email
         label={<span className={styles.label}>Email</span>}
-        value={emailValue}
-        onChange={(event) => setEmailValue(event.target.value)}
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
       ></Email>
       <Password
         label={<span className={styles.label}>Password</span>}
-        value={passwordValue}
-        onChange={(event) => setPasswordValue(event.target.value)}
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
       ></Password>
       <Password
         label={<span className={styles.label}>Confirm password</span>}
-        value={passwordValue}
-        onChange={(event) => setPasswordValue(event.target.value)}
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
       ></Password>
     </WelcomeTemplate>
   );

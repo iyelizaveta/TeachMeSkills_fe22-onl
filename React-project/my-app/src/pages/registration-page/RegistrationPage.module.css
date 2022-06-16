@@ -21,10 +21,10 @@ h2 {
   font-weight: 700;
 }
 
-.label {
+span {
   color: var(--secondary-text-color);
 }
 
-span {
+.label {
   color: var(--secondary-text-color);
 }

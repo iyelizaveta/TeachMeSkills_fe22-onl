@@ -43,13 +43,13 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
     >
       <Email
         ref={emailRef}
-        label={<span>Email</span>}
+        label={<span className={styles.label}>Email</span>}
         value={emailValue}
         onChange={(event) => setEmailValue(event.target.value)}
       ></Email>
       <Password
         ref={passwordRef}
-        label={<span>Password</span>}
+        label={<span className={styles.label}>Password</span>}
         value={passwordValue}
         onChange={(event) => setPasswordValue(event.target.value)}
       ></Password>
