@@ -1,17 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RegisterPaylod, RegisterResponce } from "./types";
+import {
+  ActivatePayload,
+  LoginPayload,
+  LoginResponse,
+  RegisterPaylod,
+  RegisterResponce,
+} from "./types";
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: null,
+  initialState: {} as { tokens?: LoginResponse },
   reducers: {
     register(state, action: { payload: RegisterPaylod }) {},
     registerSuccess(state, action: { payload: RegisterResponce }) {},
     registerFailure(state, action: { payload: string }) {
       console.error("Register failure", action.payload);
     },
+    activate(state, action: { payload: ActivatePayload }) {},
+    activateSuccess() {},
+    activateFailure() {},
+    login(state, action: { payload: LoginPayload }) {},
+    loginSuccess(state, action: { payload: LoginResponse }) {
+      state.tokens = action.payload;
+    },
+    loginFailure(state, action: { payload: string }) {
+      console.error("Login failure", action.payload);
+    },
   },
 });
 
-export const { register, registerFailure, registerSuccess } = authSlice.actions;
+export const {
+  register,
+  registerFailure,
+  registerSuccess,
+  activate,
+  activateSuccess,
+  activateFailure,
+  login,
+  loginSuccess,
+  loginFailure,
+} = authSlice.actions;
 export default authSlice.reducer;

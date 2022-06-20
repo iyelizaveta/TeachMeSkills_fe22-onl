@@ -11,11 +11,16 @@ import { MyPosts } from "./pages/all-posts/MyPosts";
 import { SelectedPost } from "./pages/selected-post/SelectedPost";
 import { RegistrationConfirmation } from "./pages/registration-confirm/RegistrationConfirmation";
 import { InformationPage } from "./pages/information/InformationPage";
+import { Activate } from "./pages/activate/Activate";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route
+          path={`${AppPages.ACTIVATE}/:uid/:token`}
+          element={<Activate />}
+        ></Route>
         <Route
           path={AppPages.CONFIRMATION}
           element={<RegistrationConfirmation />}
