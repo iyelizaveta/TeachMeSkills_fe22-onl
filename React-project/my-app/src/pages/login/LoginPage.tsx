@@ -8,6 +8,8 @@ import { AppPages } from "../../types";
 import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import { Title } from "../../ui/title/Title";
 import styles from "./LoginPage.module.css";
+import { useAppDispatch } from "../../hooks";
+import { login } from "../../features/auth/authSlice";
 
 type LoginPageProps = {};
 
@@ -16,6 +18,7 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
   const [passwordValue, setPasswordValue] = useState("");
   const emailRef = React.createRef<HTMLInputElement>();
   const passwordRef = React.createRef<HTMLInputElement>();
+  const dispatch = useAppDispatch();
   return (
     <WelcomeTemplate
       className={styles.container}
@@ -34,7 +37,14 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         </p>
       }
     >
-      <form className={styles.form}>
+      <form
+        className={styles.form}
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(login({ email: emailValue, password: passwordValue }));
+          console.log(e);
+        }}
+      >
         <Email
           ref={emailRef}
           label={<span className={styles.label}>Email</span>}
@@ -57,11 +67,9 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         >
           Reset
         </PrimaryButton>
-        <Link to={AppPages.POSTS}>
-          <PrimaryButton className={styles.button} role="presentation">
-            Login
-          </PrimaryButton>
-        </Link>
+        <PrimaryButton className={styles.button} type="submit">
+          Login
+        </PrimaryButton>
       </form>
     </WelcomeTemplate>
   );
