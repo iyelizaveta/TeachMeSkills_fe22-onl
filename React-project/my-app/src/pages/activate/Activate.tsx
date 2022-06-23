@@ -8,7 +8,7 @@ export const Activate: React.FC = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     if (uid && token) {
-      dispatch(activate({ uid, token }));
+      dispatch(activate({ isActivated: true }));
       console.log("Dispatch was called");
     } else {
       console.error("Activate data is missing");
