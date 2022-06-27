@@ -1,4 +1,3 @@
-import { MarkDismark } from "../../features/posts/mark-dismark/ui/MarkDismark";
 import { PreviewButton } from "../preview-button/PreviewButton";
 import styles from "./PostCard.module.css";
 type PostCardProps = {

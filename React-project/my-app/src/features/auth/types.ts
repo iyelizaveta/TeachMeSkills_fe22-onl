@@ -4,7 +4,7 @@ export type RegisterPaylod = {
   password: string;
 };
 
-export type RegisterResponce = {
+export type RegisterResponse = {
   email: string;
   username: string;
   id: number;
@@ -19,4 +19,8 @@ export type LoginPayload = Omit<RegisterPaylod, "username">;
 export type LoginResponse = {
   access: string;
   refresh: string;
+};
+
+export type RefreshResponse = {
+  access: string;
 };

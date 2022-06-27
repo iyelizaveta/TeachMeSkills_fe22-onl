@@ -7,7 +7,7 @@ import { LoginPage } from "./pages/login/LoginPage";
 import { RegistrationPage } from "./pages/registration-page/RegistrationPage";
 import { MainPage } from "./pages/main-page/MainPage";
 import { RegistrationSuccess } from "./pages/registration-success/RegistrationSuccess";
-import { MyPosts } from "./pages/all-posts/MyPosts";
+import { MyPosts } from "./pages/my-posts/MyPosts";
 import { SelectedPost } from "./pages/selected-post/SelectedPost";
 import { RegistrationConfirmation } from "./pages/registration-confirm/RegistrationConfirmation";
 import { InformationPage } from "./pages/information/InformationPage";

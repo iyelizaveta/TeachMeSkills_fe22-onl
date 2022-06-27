@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks";
 import { PostCard } from "../../ui/post-card/PostCard";
 import { PostsCardList } from "../../features/posts/card-list/CardList";
 import { CloseOutlined } from "@ant-design/icons";
+// import { getUser } from "../../features/user/userSlice";
 
 type MyPostsProps = {};
 
@@ -21,7 +22,9 @@ export const MyPosts: React.FC<MyPostsProps> = () => {
       ? posts?.find((item) => item.id === selectedPostId)
       : null;
   const dispatch = useAppDispatch();
+  const onCloseClick = () => dispatch(setSelectedPost(null));
   useEffect(() => {
+    // dispatch(getUser());
     setTimeout(() => {
       setPosts(data);
     }, 1000);
@@ -36,15 +39,14 @@ export const MyPosts: React.FC<MyPostsProps> = () => {
               : `${styles.overlayContainerClose}`
           }
         >
-          <div className={styles.overlay} onClick={() => setPreview(false)}>
+          <div className={styles.overlay}>
             {selectedPost ? (
               <PostCard {...selectedPost} className={styles.card}>
                 <CloseOutlined
                   className={styles.close}
                   role="button"
-                  onClick={(event) => {
-                    setPreview(false);
-                    event.preventDefault();
+                  onClick={() => {
+                    onCloseClick();
                   }}
                 />
               </PostCard>

@@ -6,7 +6,7 @@ import { TextInput } from "../../ui/form/inputs/text-input/TextInput";
 import { WelcomeTemplate } from "../../templates/welcome/WelcomeTemplate";
 import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import styles from "./RegistrationPage.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppPages } from "../../types";
 import { useAppDispatch } from "../../hooks";
 import { register } from "../../features/auth/authSlice";
@@ -18,7 +18,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <WelcomeTemplate
       className={styles.container}

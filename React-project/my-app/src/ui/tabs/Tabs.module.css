@@ -5,6 +5,7 @@
 }
 
 .tab {
+  width: 100px;
   background-color: var(--secondary-text-color);
   opacity: 0.6;
   border: none;
@@ -17,6 +18,7 @@
 }
 
 .tabSelected {
+  width: 100px;
   background-color: var(--blue-background-color);
   border: none;
   border-radius: 25px;

@@ -5,6 +5,7 @@ import markedPostReducer from "./features/posts/mark-dismark/markDismarkSlice";
 import authReducer from "./features/auth/authSlice";
 import createSagaMiddleware from "redux-saga";
 import { rootSaga } from "./sagas";
+import userReducer from "./features/user/userSlice";
 
 let sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
@@ -15,6 +16,7 @@ export const store = configureStore({
     likeDislike: likeDislikeReducer,
     markedPost: markedPostReducer,
     register: authReducer,
+    user: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),

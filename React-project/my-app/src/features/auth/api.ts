@@ -1,14 +1,16 @@
+import { baseUrl, commonPostHeaders } from "../../api/config";
 import {
   ActivatePayload,
   LoginPayload,
   LoginResponse,
+  RefreshResponse,
   RegisterPaylod,
-  RegisterResponce,
+  RegisterResponse,
 } from "./types";
 export namespace AuthApi {
   export async function register(
     payload: RegisterPaylod
-  ): Promise<RegisterResponce> {
+  ): Promise<RegisterResponse> {
     try {
       const result = await fetch(
         "https://studapi.teachmeskills.by/auth/users/",
@@ -42,14 +44,11 @@ export namespace AuthApi {
     activatePromise = activatePromise.then(() => chainedPromise);
 
     try {
-      const result = await fetch(
-        "https://studapi.teachmeskills.by/auth/users/activation/",
-        {
-          method: "POST",
-          body: JSON.stringify(payload),
-          headers: { "content-type": "application/json" },
-        }
-      );
+      const result = await fetch(`${baseUrl}auth/users/activation/`, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: commonPostHeaders,
+      });
       if (!result.ok) {
         const errorText = await result.text();
         throw new Error(errorText);
@@ -65,14 +64,31 @@ export namespace AuthApi {
 
   export async function login(payload: LoginPayload): Promise<LoginResponse> {
     try {
-      const result = await fetch(
-        "https://studapi.teachmeskills.by/auth/jwt/create/",
-        {
-          method: "POST",
-          body: JSON.stringify(payload),
-          headers: { "content-type": "application/json" },
-        }
-      );
+      const result = await fetch(`${baseUrl}auth/jwt/create/`, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: commonPostHeaders,
+      });
+      if (!result.ok) {
+        const errorText = await result.text();
+        throw new Error(errorText);
+      }
+      return result.json();
+    } catch (e) {
+      console.error(e);
+      throw e;
+    }
+  }
+
+  export async function refresh(
+    refreshToken: string
+  ): Promise<RefreshResponse> {
+    try {
+      const result = await fetch(`${baseUrl}auth/jwt/refresh/`, {
+        method: "POST",
+        body: JSON.stringify({ refresh: refreshToken }),
+        headers: commonPostHeaders,
+      });
       if (!result.ok) {
         const errorText = await result.text();
         throw new Error(errorText);

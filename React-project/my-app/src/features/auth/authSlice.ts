@@ -3,8 +3,9 @@ import {
   ActivatePayload,
   LoginPayload,
   LoginResponse,
+  RefreshResponse,
   RegisterPaylod,
-  RegisterResponce,
+  RegisterResponse,
 } from "./types";
 
 const authSlice = createSlice({
@@ -12,7 +13,7 @@ const authSlice = createSlice({
   initialState: {} as { tokens?: LoginResponse },
   reducers: {
     register(state, action: { payload: RegisterPaylod }) {},
-    registerSuccess(state, action: { payload: RegisterResponce }) {},
+    registerSuccess(state, action: { payload: RegisterResponse }) {},
     registerFailure(state, action: { payload: string }) {
       console.error("Register failure", action.payload);
     },
@@ -26,6 +27,9 @@ const authSlice = createSlice({
     loginFailure(state, action: { payload: string }) {
       console.error("Login failure", action.payload);
     },
+    refresh() {},
+    refreshSuccess(state, action: { payload: RefreshResponse }) {},
+    refreshFailure(state, action: { payload: string }) {},
   },
 });
 
@@ -39,5 +43,8 @@ export const {
   login,
   loginSuccess,
   loginFailure,
+  refresh,
+  refreshSuccess,
+  refreshFailure,
 } = authSlice.actions;
 export default authSlice.reducer;

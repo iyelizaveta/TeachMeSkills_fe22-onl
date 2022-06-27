@@ -4,8 +4,15 @@ import {
   loginSaga,
   loginSuccessSaga,
   registerSaga,
+  refreshSaga,
 } from "./authSagas";
 
 export function* authSagas() {
-  yield all([registerSaga(), activateSaga(), loginSuccessSaga(), loginSaga()]);
+  yield all([
+    registerSaga(),
+    activateSaga(),
+    loginSuccessSaga(),
+    loginSaga(),
+    refreshSaga(),
+  ]);
 }

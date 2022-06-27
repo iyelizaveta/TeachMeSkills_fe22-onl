@@ -1,6 +1,4 @@
-// import React, { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { MarkDismark } from "../../features/posts/mark-dismark/ui/MarkDismark";
 import { AppPages } from "../../types";
 import { PostCard } from "../post-card/PostCard";
 import styles from "./PostList.module.css";
