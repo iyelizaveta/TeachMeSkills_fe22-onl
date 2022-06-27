@@ -12,6 +12,7 @@ import { SelectedPost } from "./pages/selected-post/SelectedPost";
 import { RegistrationConfirmation } from "./pages/registration-confirm/RegistrationConfirmation";
 import { InformationPage } from "./pages/information/InformationPage";
 import { Activate } from "./pages/activate/Activate";
+import { AllPosts } from "./pages/all-posts-page/AllPostsPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           path={`${AppPages.ACTIVATE}/:uid/:token`}
           element={<Activate />}
         ></Route>
+        <Route path={AppPages.ALL_POSTS} element={<AllPosts />}></Route>
         <Route
           path={AppPages.CONFIRMATION}
           element={<RegistrationConfirmation />}
@@ -28,13 +30,13 @@ function App() {
         <Route path={AppPages.INFO_PAGE} element={<InformationPage />}></Route>
         <Route path={AppPages.LOGIN} element={<LoginPage />}></Route>
         <Route path={AppPages.MAIN_PAGE} element={<MainPage />}></Route>
-        <Route path={AppPages.POSTS} element={<MyPosts />}></Route>
+        <Route path={AppPages.MY_POSTS} element={<MyPosts />}></Route>
         <Route
           path={AppPages.REGISTRATION}
           element={<RegistrationPage />}
         ></Route>
         <Route
-          path={`${AppPages.POSTS}/:id`}
+          path={`${AppPages.MY_POSTS}/:id`}
           element={<SelectedPost />}
         ></Route>
         <Route

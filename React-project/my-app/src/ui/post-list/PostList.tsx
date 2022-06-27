@@ -25,7 +25,7 @@ export const PostList: React.FC<PostListProps> = ({
   return (
     <div className={styles.container}>
       {data.map((post) => (
-        <Link to={`${AppPages.POSTS}/${post.id}`} key={post.id}>
+        <Link to={`${AppPages.MY_POSTS}/${post.id}`} key={post.id}>
           <PostCard
             id={post.id}
             image={post.image}
