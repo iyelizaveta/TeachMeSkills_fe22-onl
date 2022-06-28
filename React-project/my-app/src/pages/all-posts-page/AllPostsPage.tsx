@@ -14,12 +14,14 @@ type AllPostsProps = {};
 
 export const AllPosts: React.FC<AllPostsProps> = () => {
   const posts = useAppSelector((state) => state.allPosts.posts);
+  console.log(posts, "all post page");
   const [preview, setPreview] = useState(true);
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null
       ? posts?.find((item) => item.id === selectedPostId)
       : null;
+  console.log(selectedPost, "selected post");
   const dispatch = useAppDispatch();
   const onCloseClick = () => dispatch(setSelectedPost(null));
   useEffect(() => {
@@ -54,6 +56,7 @@ export const AllPosts: React.FC<AllPostsProps> = () => {
         <PostsCardList
           onPreviewClick={(id) => {
             dispatch(setSelectedPost(id));
+            console.log(id, "selected post ID");
             setPreview(true);
           }}
         ></PostsCardList>

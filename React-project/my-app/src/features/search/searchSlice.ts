@@ -10,6 +10,9 @@ const searchSlice = createSlice({
       state.response = action.payload;
     },
     searchFailure(state, action: { payload: string }) {},
+    reset(state) {
+      state.response = null;
+    },
   },
 });
 

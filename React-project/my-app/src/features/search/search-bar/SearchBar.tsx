@@ -23,7 +23,12 @@ export const SearchBar: React.FC<SearchBarProps> = () => {
         ></input>
         {list.length > 0 ? (
           <div className={styles.dropdownContainer}>
-            <Dropdown list={list} onSelectedItem={() => {}}></Dropdown>
+            <Dropdown
+              list={list}
+              onSelectedItem={() => {
+                dispatch(actions.reset());
+              }}
+            ></Dropdown>
           </div>
         ) : null}
       </div>
