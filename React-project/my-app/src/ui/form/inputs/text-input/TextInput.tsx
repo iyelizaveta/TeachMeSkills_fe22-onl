@@ -3,7 +3,7 @@ import styles from "../input.module.css";
 
 type TextInputProps = {
   label: React.ReactNode;
-  value: string;
+  value?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 };
 

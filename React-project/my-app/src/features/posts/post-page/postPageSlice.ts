@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Post } from "./types";
+import { Post } from "../../../types/post";
 
 const postSlice = createSlice({
   name: "post",

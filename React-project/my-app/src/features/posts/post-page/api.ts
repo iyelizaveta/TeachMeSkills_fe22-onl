@@ -1,5 +1,5 @@
 import { baseUrl } from "../../../api/config";
-import { Post } from "./types";
+import { Post } from "../../../types/post";
 
 export namespace PostApi {
   export async function getPost(): Promise<Post> {
