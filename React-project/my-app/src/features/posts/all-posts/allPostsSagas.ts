@@ -9,8 +9,8 @@ import { PostsApi } from "./api";
 export function* allPostsSaga() {
   yield takeEvery(getAllPosts, function* () {
     try {
-      const result = yield* call(PostsApi.getPosts);
-      yield* put(getAllPostsSuccess(result));
+      const response = yield* call(PostsApi.getPosts);
+      yield* put(getAllPostsSuccess(response.results));
     } catch (e) {
       if (e instanceof Error) {
         yield* put(getAllPostsFailure());

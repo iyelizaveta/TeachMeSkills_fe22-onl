@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { PostsLikeDislike } from "../../features/posts/like-dislike/posts-like-dislike";
 import { PostsMarkDismark } from "../../features/posts/mark-dismark/posts-mark-dismark";
 import { getPost } from "../../features/posts/post-page/postPageSlice";
@@ -12,9 +13,12 @@ type PostPageProps = {};
 export const PostPage: React.FC<PostPageProps> = () => {
   const post = useAppSelector((state) => state.post.post);
   const dispatch = useAppDispatch();
+  const { id } = useParams();
   useEffect(() => {
-    dispatch(getPost());
-  }, [dispatch]);
+    if (id) {
+      dispatch(getPost({ id }));
+    }
+  }, [dispatch, id]);
   return (
     <div className={styles.container}>
       <ContentTemplate>

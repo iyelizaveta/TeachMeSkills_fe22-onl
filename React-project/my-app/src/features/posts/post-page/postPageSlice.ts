@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Post } from "./types";
+import { Post } from "../../../types/post";
+import { GetPostPayload } from "./types";
 
 const postSlice = createSlice({
   name: "post",
@@ -16,7 +17,7 @@ const postSlice = createSlice({
     isLoading: boolean;
   },
   reducers: {
-    getPost(state) {
+    getPost(state, action: { payload: GetPostPayload }) {
       state.isLoading = true;
     },
     getPostSuccess(state, action: { payload: Post }) {

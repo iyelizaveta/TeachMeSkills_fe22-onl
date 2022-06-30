@@ -3,9 +3,9 @@ import { getPost, getPostSuccess, getPostFailure } from "./postPageSlice";
 import { PostApi } from "./api";
 
 export function* postSaga() {
-  yield takeEvery(getPost, function* () {
+  yield takeEvery(getPost, function* (action) {
     try {
-      const result = yield* call(PostApi.getPost);
+      const result = yield* call(PostApi.getPost, action.payload);
       yield* put(getPostSuccess(result));
     } catch (e) {
       if (e instanceof Error) {

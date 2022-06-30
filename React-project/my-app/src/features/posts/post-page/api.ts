@@ -1,10 +1,11 @@
 import { baseUrl } from "../../../api/config";
-import { Post } from "./types";
+import { Post } from "../../../types/post";
+import { GetPostPayload } from "./types";
 
 export namespace PostApi {
-  export async function getPost(): Promise<Post> {
+  export async function getPost(payload: GetPostPayload): Promise<Post> {
     try {
-      const result = await fetch(`${baseUrl}blog/posts/78`);
+      const result = await fetch(`${baseUrl}blog/posts/${payload.id}`);
       if (!result.ok) {
         const errorText = await result.text();
         throw new Error(errorText);
