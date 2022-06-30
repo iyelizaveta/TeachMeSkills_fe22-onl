@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { getUser } from "../../features/user/userSlice";
 
 type ContentTemplateProps = {
-  title: React.ReactNode;
+  title?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
 };

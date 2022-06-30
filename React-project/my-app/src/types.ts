@@ -5,6 +5,7 @@ export enum AppPages {
   LOGIN = "/login",
   MAIN_PAGE = "/main-page",
   MY_POSTS = "/my-posts",
+  POST_PAGE = "/post-page",
   REGISTRATION = "/registration",
   RESET_PASSWORD = "/reset-password",
   SUCCESS_PAGE = "/success-page",

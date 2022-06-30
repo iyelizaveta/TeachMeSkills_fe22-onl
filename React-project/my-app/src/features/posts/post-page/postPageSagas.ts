@@ -1,0 +1,16 @@
+import { call, put, takeEvery } from "typed-redux-saga";
+import { getPost, getPostSuccess, getPostFailure } from "./postPageSlice";
+import { PostApi } from "./api";
+
+export function* postSaga() {
+  yield takeEvery(getPost, function* () {
+    try {
+      const result = yield* call(PostApi.getPost);
+      yield* put(getPostSuccess(result));
+    } catch (e) {
+      if (e instanceof Error) {
+        yield* put(getPostFailure());
+      }
+    }
+  });
+}

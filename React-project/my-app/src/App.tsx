@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppPages } from "./types";
 import "./App.css";
-// import "antd/dist/antd.css";
 import { LoginPage } from "./pages/login/LoginPage";
 import { RegistrationPage } from "./pages/registration-page/RegistrationPage";
 import { MainPage } from "./pages/main-page/MainPage";
@@ -13,6 +12,7 @@ import { RegistrationConfirmation } from "./pages/registration-confirm/Registrat
 import { InformationPage } from "./pages/information/InformationPage";
 import { Activate } from "./pages/activate/Activate";
 import { AllPosts } from "./pages/all-posts-page/AllPostsPage";
+import { PostPage } from "./pages/post-page/PostPage";
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
         <Route path={AppPages.LOGIN} element={<LoginPage />}></Route>
         <Route path={AppPages.MAIN_PAGE} element={<MainPage />}></Route>
         <Route path={AppPages.MY_POSTS} element={<MyPosts />}></Route>
+        <Route path={AppPages.POST_PAGE} element={<PostPage />}></Route>
         <Route
           path={AppPages.REGISTRATION}
           element={<RegistrationPage />}
