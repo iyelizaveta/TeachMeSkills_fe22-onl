@@ -12,7 +12,7 @@ type AllPostsProps = {};
 
 export const AllPosts: React.FC<AllPostsProps> = () => {
   const posts = useAppSelector((state) => state.allPosts.posts);
-  const [preview, setPreview] = useState(true);
+  const [preview, setPreview] = useState(false);
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
     selectedPostId != null

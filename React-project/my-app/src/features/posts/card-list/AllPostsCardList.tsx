@@ -16,14 +16,14 @@ export const AllPostsCardList: React.FC<AllPostsCardListProps> = ({
 }) => {
   const posts = useAppSelector((state) => state.allPosts.posts);
   const sortedPosts = useAppSelector(
-    (state) => state.sortedPosts.response?.results ?? []
+    (state) => state.sortedPosts.response?.results
   );
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getAllPosts());
   }, [dispatch]);
 
-  let data = []; // код ниже не срабатывает
+  let data = [];
   if (!sortedPosts) {
     data = posts;
   } else {
