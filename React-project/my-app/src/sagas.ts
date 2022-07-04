@@ -5,6 +5,7 @@ import { userSagas } from "./features/user";
 import { allPostsSagas } from "./features/posts/all-posts";
 import { postSaga } from "./features/posts/post-page/postPageSagas";
 import { searchSagas } from "./features/search";
+import { addPostSagas } from "./features/posts/add-post";
 
 export function* rootSaga() {
   yield all([
@@ -14,5 +15,6 @@ export function* rootSaga() {
     allPostsSagas(),
     postSaga(),
     searchSagas(),
+    addPostSagas(),
   ]);
 }

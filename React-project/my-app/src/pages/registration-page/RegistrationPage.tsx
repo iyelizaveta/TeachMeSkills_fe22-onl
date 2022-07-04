@@ -2,7 +2,7 @@ import { Title } from "../../ui/title/Title";
 import { useState } from "react";
 import { Email } from "../../ui/form/inputs/email-input/Email";
 import { Password } from "../../ui/form/inputs/password-input/Password";
-import { TextInput } from "../../ui/form/inputs/text-input/TextInput";
+import { Input } from "../../ui/form/inputs/text-input/Input";
 import { WelcomeTemplate } from "../../templates/welcome/WelcomeTemplate";
 import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import styles from "./RegistrationPage.module.css";
@@ -46,11 +46,11 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
           dispatch(register({ email, password, username: name }));
         }}
       >
-        <TextInput
+        <Input
           label={<span className={styles.label}>User name</span>}
           value={name}
           onChange={(event) => setName(event.target.value)}
-        ></TextInput>
+        ></Input>
         <Email
           label={<span className={styles.label}>Email</span>}
           value={email}

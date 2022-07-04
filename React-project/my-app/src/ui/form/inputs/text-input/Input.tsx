@@ -1,23 +1,27 @@
 import React from "react";
 import styles from "../input.module.css";
 
-type TextInputProps = {
+type InputProps = {
   label: React.ReactNode;
   value?: string;
+  type?: string;
+  className?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 };
 
-export const TextInput: React.FC<TextInputProps> = ({
+export const Input: React.FC<InputProps> = ({
   label,
   value,
+  type,
+  className,
   onChange,
 }) => {
   return (
-    <label className={styles.label}>
+    <label className={`${styles.label} ${className}`}>
       {label}
       <input
-        className={styles.input}
-        type="text"
+        className={`${styles.input} ${className}`}
+        type={type}
         value={value}
         onChange={onChange}
       ></input>

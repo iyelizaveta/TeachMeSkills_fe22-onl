@@ -1,3 +1,4 @@
+import { useAppSelector, useAppDispatch } from "../../hooks";
 import { ContentTemplate } from "../../templates/content/ContentTemplate";
 import { PostCard } from "../../ui/post-card/PostCard";
 import { Title } from "../../ui/title/Title";
@@ -6,6 +7,8 @@ import styles from "./SelectedPost.module.css";
 type SelectedPostProps = {};
 
 export const SelectedPost: React.FC<SelectedPostProps> = () => {
+  const posts = useAppSelector((state) => state.allPosts.posts);
+  const dispatch = useAppDispatch();
   return (
     <ContentTemplate
       className={styles.container}

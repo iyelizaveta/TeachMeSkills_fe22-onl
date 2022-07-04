@@ -1,5 +1,6 @@
 export enum AppPages {
   ACTIVATE = "/activate",
+  ADD_POST = "/add-post",
   ALL_POSTS = "/all-posts",
   CONFIRMATION = "/regestration-confirmation",
   LOGIN = "/login",

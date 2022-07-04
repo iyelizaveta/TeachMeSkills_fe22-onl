@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.button {
+  width: 200px;
+  height: 40px;
+  margin-top: 25px;
+  display: block;
+  background-color: var(--blue-background-color);
+}
+
+.container {
+  display: flex;
+}
+
+.containerSecond {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonContainer {
+  display: flex;
+}
+
+.textarea {
+  width: 100%;
+}
+
+.description {
+  width: 100%;
+}

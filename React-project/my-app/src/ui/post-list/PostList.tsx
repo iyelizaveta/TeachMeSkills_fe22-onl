@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getAllPosts } from "../../features/posts/all-posts/allPostsSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 import { AppPages } from "../../types";
 import { PostCard } from "../post-card/PostCard";
 import styles from "./PostList.module.css";
@@ -17,15 +20,19 @@ type PostListProps = {
 };
 
 export const PostList: React.FC<PostListProps> = ({
-  data,
   onPreviewClick,
   LikeDislike,
   MarkDismark,
 }) => {
+  const posts = useAppSelector((state) => state.allPosts.posts);
+  const dispatch = useAppDispatch();
+  // useEffect(() => {
+  //   dispatch(getAllPosts());
+  // }, [dispatch]);
   return (
     <div className={styles.container}>
-      {data.map((post) => (
-        <Link to={`${AppPages.MY_POSTS}/${post.id}`} key={post.id}>
+      {posts.map((post) => (
+        <Link to={`${AppPages.ALL_POSTS}/${post.id}`} key={post.id}>
           <PostCard
             id={post.id}
             image={post.image}

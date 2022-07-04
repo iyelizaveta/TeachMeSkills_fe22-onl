@@ -13,6 +13,7 @@ import { InformationPage } from "./pages/information/InformationPage";
 import { Activate } from "./pages/activate/Activate";
 import { AllPosts } from "./pages/all-posts-page/AllPostsPage";
 import { PostPage } from "./pages/post-page/PostPage";
+import { AddPostPage } from "./pages/add-post/AddPostPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           path={`${AppPages.ACTIVATE}/:uid/:token`}
           element={<Activate />}
         ></Route>
+        <Route path={AppPages.ADD_POST} element={<AddPostPage />}></Route>
         <Route path={AppPages.ALL_POSTS} element={<AllPosts />}></Route>
         <Route
           path={AppPages.CONFIRMATION}
@@ -40,7 +42,7 @@ function App() {
           element={<RegistrationPage />}
         ></Route>
         <Route
-          path={`${AppPages.MY_POSTS}/:id`}
+          path={`${AppPages.ALL_POSTS}/:id`}
           element={<SelectedPost />}
         ></Route>
         <Route
