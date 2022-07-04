@@ -8,12 +8,13 @@ const postSlice = createSlice({
     post: {},
     isLoading: false,
   } as {
-    post: {
-      id: number | string;
-      image?: string | undefined;
-      text: string;
-      title: string;
-    };
+    post: Post;
+    // {
+    //   id: number | string;
+    //   image?: string | undefined;
+    //   text: string;
+    //   title: string;
+    // };
     isLoading: boolean;
   },
   reducers: {
@@ -25,6 +26,7 @@ const postSlice = createSlice({
       state.post.image = action.payload.image;
       state.post.text = action.payload.text;
       state.post.title = action.payload.title;
+      state.post.date = action.payload.date;
       state.isLoading = false;
     },
     getPostFailure(state) {

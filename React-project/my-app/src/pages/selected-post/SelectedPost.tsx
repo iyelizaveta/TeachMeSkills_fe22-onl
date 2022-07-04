@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getPost } from "../../features/posts/post-page/postPageSlice";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { ContentTemplate } from "../../templates/content/ContentTemplate";
 import { PostCard } from "../../ui/post-card/PostCard";
@@ -7,22 +10,27 @@ import styles from "./SelectedPost.module.css";
 type SelectedPostProps = {};
 
 export const SelectedPost: React.FC<SelectedPostProps> = () => {
-  const posts = useAppSelector((state) => state.allPosts.posts);
+  const post = useAppSelector((state) => state.post.post);
   const dispatch = useAppDispatch();
+  const { id } = useParams();
+  useEffect(() => {
+    if (id) {
+      dispatch(getPost({ id }));
+    }
+  }, [dispatch, id]);
+
   return (
     <ContentTemplate
       className={styles.container}
       title={<Title>Selected post</Title>}
     >
       <PostCard
-        id={1}
-        key={1}
-        image={
-          "https://cdn.britannica.com/89/131089-050-A4773446/flowers-garden-petunia.jpg?w=690&h=388&c=crop"
-        }
-        text={"Lorem ipsum"}
-        date={"15.05.2022"}
-        title={"Why is lorem ipsum?"}
+        id={post.id}
+        key={post.id}
+        image={post.image}
+        text={post.text}
+        date={post.date}
+        title={post.title}
       ></PostCard>
     </ContentTemplate>
   );
