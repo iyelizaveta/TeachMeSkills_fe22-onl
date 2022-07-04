@@ -5,7 +5,7 @@ import { setSelectedPost } from "../../features/posts/selectedPostSlice";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { PostCard } from "../../ui/post-card/PostCard";
-import { PostsCardList } from "../../features/posts/card-list/CardList";
+import { AllPostsCardList } from "../../features/posts/card-list/AllPostsCardList";
 import { CloseOutlined } from "@ant-design/icons";
 
 type AllPostsProps = {};
@@ -46,12 +46,12 @@ export const AllPosts: React.FC<AllPostsProps> = () => {
         </div>
       ) : null}
       <ContentTemplate title={<Title>All posts</Title>}>
-        <PostsCardList
+        <AllPostsCardList
           onPreviewClick={(id) => {
             dispatch(setSelectedPost(id));
             setPreview(true);
           }}
-        ></PostsCardList>
+        ></AllPostsCardList>
       </ContentTemplate>
     </div>
   );

@@ -3,18 +3,20 @@ import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import { Title } from "../../ui/title/Title";
 import styles from "./MyPosts.module.css";
 import { setSelectedPost } from "../../features/posts/selectedPostSlice";
-import data from "./data.json";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { PostCard } from "../../ui/post-card/PostCard";
-import { PostsCardList } from "../../features/posts/card-list/CardList";
 import { CloseOutlined } from "@ant-design/icons";
+import { MyPostsCardList } from "../../features/posts/card-list/MyPostsCardList";
+import { useNavigate } from "react-router-dom";
+import { AppPages } from "../../types";
 // import { getUser } from "../../features/user/userSlice";
 
 type MyPostsProps = {};
 
 export const MyPosts: React.FC<MyPostsProps> = () => {
-  const [posts, setPosts] = useState<typeof data | null>(null);
+  // const [posts, setPosts] = useState<typeof data | null>(null);
+  const posts = useAppSelector((state) => state.myPosts.myPosts);
   const [preview, setPreview] = useState(true);
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);
   const selectedPost =
@@ -23,12 +25,7 @@ export const MyPosts: React.FC<MyPostsProps> = () => {
       : null;
   const dispatch = useAppDispatch();
   const onCloseClick = () => dispatch(setSelectedPost(null));
-  useEffect(() => {
-    // dispatch(getUser());
-    setTimeout(() => {
-      setPosts(data);
-    }, 1000);
-  }, []);
+  const navigate = useNavigate();
   return (
     <div className={styles.container}>
       {selectedPostId != null ? (
@@ -58,16 +55,21 @@ export const MyPosts: React.FC<MyPostsProps> = () => {
         title={
           <Title>
             My posts{" "}
-            <PrimaryButton className={styles.button}>+ Add</PrimaryButton>
+            <PrimaryButton
+              className={styles.button}
+              onClick={() => navigate(AppPages.ADD_POST)}
+            >
+              + Add
+            </PrimaryButton>
           </Title>
         }
       >
-        <PostsCardList
+        <MyPostsCardList
           onPreviewClick={(id) => {
             dispatch(setSelectedPost(id));
             setPreview(true);
           }}
-        ></PostsCardList>
+        ></MyPostsCardList>
       </ContentTemplate>
     </div>
   );

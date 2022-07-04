@@ -5,11 +5,11 @@ import { getAllPosts } from "../all-posts/allPostsSlice";
 import { PostsLikeDislike } from "../like-dislike/posts-like-dislike";
 import { PostsMarkDismark } from "../mark-dismark/posts-mark-dismark";
 
-type PostsCardListProps = {
+type AllPostsCardListProps = {
   onPreviewClick?: (id: string | number) => void;
 };
 
-export const PostsCardList: React.FC<PostsCardListProps> = ({
+export const AllPostsCardList: React.FC<AllPostsCardListProps> = ({
   onPreviewClick,
 }) => {
   const posts = useAppSelector((state) => state.allPosts.posts);
