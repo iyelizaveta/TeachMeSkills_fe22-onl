@@ -6,6 +6,7 @@ import { PostsLikeDislike } from "../like-dislike/posts-like-dislike";
 import { PostsMarkDismark } from "../mark-dismark/posts-mark-dismark";
 import { SortBar } from "../sorting-post";
 import { actions } from "../sorting-post/sortingPostsSlice";
+import styles from "./AllPostsCardList.module.css";
 
 type AllPostsCardListProps = {
   onPreviewClick?: (id: string | number) => void;
@@ -31,7 +32,7 @@ export const AllPostsCardList: React.FC<AllPostsCardListProps> = ({
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <SortBar
         onChange={(e) => {
           dispatch(actions.getSortedPosts({ text: e.currentTarget.value }));
