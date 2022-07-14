@@ -11,23 +11,26 @@ import postReducer from "./features/posts/post-page/postPageSlice";
 import searchReducer from "./features/search";
 import addPostReducer from "./features/posts/add-post";
 import myPostsReducer from "./features/posts/my-posts/myPostsSlice";
+import sortedPostsReducer from "./features/posts/sorting-post";
 
 let sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
+export const allReducers = {
+  selectedPost: selectedPostReducer,
+  likeDislike: likeDislikeReducer,
+  markedPost: markedPostReducer,
+  register: authReducer,
+  user: userReducer,
+  allPosts: allPostsReducer,
+  post: postReducer,
+  search: searchReducer,
+  addPost: addPostReducer,
+  myPosts: myPostsReducer,
+  sortedPosts: sortedPostsReducer,
+};
 
 export const store = configureStore({
-  reducer: {
-    selectedPost: selectedPostReducer,
-    likeDislike: likeDislikeReducer,
-    markedPost: markedPostReducer,
-    register: authReducer,
-    user: userReducer,
-    allPosts: allPostsReducer,
-    post: postReducer,
-    search: searchReducer,
-    addPost: addPostReducer,
-    myPosts: myPostsReducer,
-  },
+  reducer: allReducers,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),
 });
