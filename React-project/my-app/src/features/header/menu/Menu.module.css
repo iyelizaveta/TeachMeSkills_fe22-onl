@@ -38,3 +38,10 @@
   align-items: flex-start;
   margin: 0;
 }
+
+.buttonOpen {
+  color: var(--text-color);
+  background-color: var(--primary-text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}

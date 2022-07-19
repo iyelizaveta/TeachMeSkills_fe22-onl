@@ -9,7 +9,7 @@ import { PrimaryButton } from "../../ui/button/PrimaryButton/PrimaryButton";
 import { Title } from "../../ui/title/Title";
 import styles from "./LoginPage.module.css";
 import { useAppDispatch } from "../../hooks";
-import { login } from "../../features/auth/authSlice";
+import { login } from "../../features/auth";
 
 type LoginPageProps = {};
 

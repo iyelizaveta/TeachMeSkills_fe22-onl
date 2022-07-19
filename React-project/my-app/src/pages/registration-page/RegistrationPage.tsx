@@ -9,7 +9,7 @@ import styles from "./RegistrationPage.module.css";
 import { Link } from "react-router-dom";
 import { AppPages } from "../../types";
 import { useAppDispatch } from "../../hooks";
-import { register } from "../../features/auth/authSlice";
+import { register } from "../../features/auth";
 
 type RegistrationPageProps = {};
 
@@ -18,7 +18,6 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useAppDispatch();
-  // const navigate = useNavigate();
   return (
     <WelcomeTemplate
       className={styles.container}
@@ -66,13 +65,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         ></Password>
-        <PrimaryButton
-          type="submit"
-          className={styles.button}
-          // onClick={() => {
-          //   navigate(AppPages.SUCCESS_PAGE);
-          // }}
-        >
+        <PrimaryButton type="submit" className={styles.button}>
           Registration
         </PrimaryButton>
       </form>

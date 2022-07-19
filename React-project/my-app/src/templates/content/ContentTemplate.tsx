@@ -1,6 +1,6 @@
 import styles from "./ContentTemplate.module.css";
 import { Header } from "../../features/header/Header";
-import { UserButton } from "../../ui/button/UserButton/UserButton";
+import { UserButton } from "../../features/header/UserButton/UserButton";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { useEffect } from "react";
 import { getUser } from "../../features/user/userSlice";
@@ -23,7 +23,7 @@ export const ContentTemplate: React.FC<ContentTemplateProps> = ({
   }, [dispatch]);
   return (
     <div className={`${styles.container} ${className}`}>
-      <Header>
+      <Header isLogin={true}>
         <UserButton>{username}</UserButton>
       </Header>
       <div className={styles.body}>

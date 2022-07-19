@@ -10,12 +10,10 @@ import { CloseOutlined } from "@ant-design/icons";
 import { MyPostsCardList } from "../../features/posts/card-list/MyPostsCardList";
 import { useNavigate } from "react-router-dom";
 import { AppPages } from "../../types";
-// import { getUser } from "../../features/user/userSlice";
 
 type MyPostsProps = {};
 
 export const MyPosts: React.FC<MyPostsProps> = () => {
-  // const [posts, setPosts] = useState<typeof data | null>(null);
   const posts = useAppSelector((state) => state.myPosts.myPosts);
   const [preview, setPreview] = useState(true);
   const selectedPostId = useAppSelector((state) => state.selectedPost.id);

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch } from "../../hooks";
-import { activate } from "../../features/auth/authSlice";
+import { activate } from "../../features/auth";
 
 export const Activate: React.FC = () => {
   const { uid, token } = useParams();

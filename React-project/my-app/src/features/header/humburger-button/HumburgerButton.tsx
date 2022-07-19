@@ -1,17 +1,19 @@
 import styles from "./HumburgerButton.module.css";
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import { useState } from "react";
-import { Menu } from "../../menu/Menu";
+import { Menu } from "../menu/Menu";
 
 type HumburgerButtonProps = {
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  isLogin: boolean;
 };
 
 export const HumburgerButton: React.FC<HumburgerButtonProps> = ({
   onClick,
   children,
+  isLogin,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   return isOpen ? (
@@ -23,9 +25,7 @@ export const HumburgerButton: React.FC<HumburgerButtonProps> = ({
         onClick?.();
       }}
     >
-      <Menu>
-        <CloseOutlined className={styles.buttonOpen} />
-      </Menu>
+      <Menu isLogin={isLogin}></Menu>
     </button>
   ) : (
     <button

@@ -5,7 +5,6 @@ type WelcomeTemplateProps = {
   title: React.ReactNode;
   children: React.ReactNode;
   className?: string;
-  // actionButton: React.ReactNode;
   description?: React.ReactNode;
 };
 
@@ -17,7 +16,7 @@ export const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({
 }) => {
   return (
     <div className={`${styles.container} ${className}`}>
-      <Header></Header>
+      <Header isLogin={false}></Header>
       <div className={styles.body}>
         {title}
         {children}
