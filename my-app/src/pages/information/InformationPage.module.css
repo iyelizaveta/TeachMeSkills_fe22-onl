@@ -1,0 +1,9 @@
+.container {
+  background: var(--background-color);
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

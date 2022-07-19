@@ -1,0 +1,40 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.tab {
+  width: 100px;
+  background-color: var(--secondary-text-color);
+  opacity: 0.6;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tabSelected {
+  width: 100px;
+  background-color: var(--blue-background-color);
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: var(--light-blue-background-color);
+}
+
+.tabLabel {
+  color: var(--primary-text-color);
+}
+
+.tabLabelSelected {
+  color: var(--primary-text-color);
+}

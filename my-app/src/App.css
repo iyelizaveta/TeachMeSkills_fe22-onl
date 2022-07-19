@@ -1,0 +1,33 @@
+#root {
+  --light-scheme-blue: rgb(28, 76, 251);
+  --light-scheme-light-blue: rgb(229, 243, 252);
+  --light-scheme-background-color: rgb(255, 255, 255);
+  --dark-scheme-blue: rgb(26, 50, 136);
+  --dark-scheme-light-blue: rgb(166, 210, 248);
+  --dark-scheme-background-color: rgb(131, 193, 247);
+
+  --primary-text-color: var(--light-scheme-blue);
+  --text-color: var(--light-scheme-background-color);
+  --secondary-text-color: rgb(136, 151, 160);
+  --blue-background-color: var(--light-scheme-blue);
+  --light-blue-background-color: var(--light-scheme-light-blue);
+  --background-color: var(--light-scheme-background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  #root {
+    --primary-text-color: white;
+    --text-color: var(--dark-scheme-blue);
+    --blue-background-color: var(--dark-scheme-blue);
+    --light-blue-background-color: var(--dark-scheme-light-blue);
+    --background-color: var(--dark-scheme-background-color);
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}

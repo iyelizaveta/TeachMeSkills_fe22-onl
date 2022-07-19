@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.text {
+  width: 290px;
+}
+
+.button {
+  width: 250px;
+  height: 40px;
+  margin-top: 25px;
+  background-color: var(--blue-background-color);
+}
+
+span {
+  color: var(--primary-text-color);
+  font-weight: 500;
+}
